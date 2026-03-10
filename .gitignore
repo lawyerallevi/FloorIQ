@@ -1,0 +1,12 @@
+# Business documents (non pubblicare)
+*.docx
+*.xlsx
+*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.*
