@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Generate OG Image</title>
+<style>
+  body { margin: 0; background: #333; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; font-family: sans-serif; color: #fff; }
+  .instructions { margin-bottom: 20px; text-align: center; }
+  .instructions p { margin: 4px 0; font-size: 14px; opacity: 0.7; }
+  canvas { border: 1px solid #555; }
+  button { margin-top: 16px; padding: 12px 32px; font-size: 16px; cursor: pointer; background: #C8972B; color: #0D0D0F; border: none; border-radius: 4px; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="instructions">
+  <h2>FloorIQ OG Image Generator</h2>
+  <p>Preview below (1200x630). Click "Download" to save as PNG.</p>
+</div>
+<canvas id="og" width="1200" height="630"></canvas>
+<button onclick="download()">Download og-image.png</button>
+
+<script>
+const c = document.getElementById('og');
+const ctx = c.getContext('2d');
+
+// Background
+ctx.fillStyle = '#0D0D0F';
+ctx.fillRect(0, 0, 1200, 630);
+
+// Subtle gold radial glow
+const grd = ctx.createRadialGradient(900, 315, 0, 900, 315, 500);
+grd.addColorStop(0, 'rgba(200,151,43,0.12)');
+grd.addColorStop(1, 'transparent');
+ctx.fillStyle = grd;
+ctx.fillRect(0, 0, 1200, 630);
+
+// Top gold line
+ctx.fillStyle = 'rgba(200,151,43,0.3)';
+ctx.fillRect(0, 0, 1200, 3);
+
+// Bottom gold line
+ctx.fillRect(0, 627, 1200, 3);
+
+// Left accent bar
+ctx.fillStyle = '#C8972B';
+ctx.fillRect(60, 180, 4, 260);
+
+// Logo text "FloorIQ"
+ctx.font = 'bold 28px Georgia, serif';
+ctx.fillStyle = '#F5F2EC';
+ctx.fillText('Floor', 60, 120);
+const floorW = ctx.measureText('Floor').width;
+ctx.fillStyle = '#C8972B';
+ctx.fillText('IQ', 60 + floorW, 120);
+
+// Kicker
+ctx.font = '14px monospace';
+ctx.fillStyle = '#C8972B';
+ctx.letterSpacing = '3px';
+ctx.fillText('AI-POWERED BRAND TRAINING', 84, 220);
+
+// Main headline
+ctx.font = 'bold 54px Georgia, serif';
+ctx.fillStyle = '#F5F2EC';
+ctx.fillText('Your brand manual', 84, 290);
+ctx.fillText('is 60 pages.', 84, 355);
+
+// Italic gold part
+ctx.font = 'italic bold 54px Georgia, serif';
+ctx.fillStyle = '#C8972B';
+const w = ctx.measureText('is 60 pages. ').width;
+ctx.fillText('Your staff read one.', 84, 420);
+
+// Subtitle
+ctx.font = '18px sans-serif';
+ctx.fillStyle = '#9a9490';
+ctx.fillText('Upload your brand manual. Get AI training scenarios in 24 hours.', 84, 480);
+ctx.fillText('No LMS. No consultants. Just results.', 84, 510);
+
+// Domain tag
+ctx.font = '13px monospace';
+ctx.fillStyle = '#C8972B';
+const tagText = 'flooriq.co.uk';
+const tagW = ctx.measureText(tagText).width;
+ctx.strokeStyle = 'rgba(200,151,43,0.4)';
+ctx.lineWidth = 1;
+ctx.strokeRect(1200 - tagW - 100, 560, tagW + 40, 32);
+ctx.fillText(tagText, 1200 - tagW - 80, 581);
+
+function download() {
+  const a = document.createElement('a');
+  a.download = 'og-image.png';
+  a.href = c.toDataURL('image/png');
+  a.click();
+}
+</script>
+</body>
+</html>
