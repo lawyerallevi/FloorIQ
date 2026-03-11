@@ -62,7 +62,7 @@ FloorIQ è una piattaforma AI che trasforma i manuali di brand standards in scen
 - **Email**: lamine.boulahdjel@gmail.com
 - **LinkedIn**: linkedin.com/in/islam-mohamed-el-amine-boulahdjel
 - **Location**: London, UK
-- **Dominio previsto**: flooriq.co.uk
+- **Dominio previsto**: flooriq.app
 
 ---
 
@@ -70,7 +70,7 @@ FloorIQ è una piattaforma AI che trasforma i manuali di brand standards in scen
 
 - `og:title`: "FloorIQ — Brand Training, Reimagined"
 - `og:description`: "Turn your brand standards manual into AI-powered training scenarios. Deployed to your team in 24 hours. Built for premium retail."
-- `og:image`: `https://flooriq.co.uk/og-image.png` (1200x630px)
+- `og:image`: `https://flooriq.app/og-image.png` (1200x630px)
 - **IMPORTANTE**: Aggiornare URL se il dominio cambia
 
 ---
