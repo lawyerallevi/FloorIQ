@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FloorIQ — Brand Training, Reimagined</title>
+
+<!-- Open Graph / WhatsApp Share -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="FloorIQ — Brand Training, Reimagined">
+<meta property="og:description" content="Turn your brand standards manual into AI-powered training scenarios. Deployed to your team in 24 hours. Built for premium retail.">
+<meta property="og:image" content="https://flooriq.co.uk/og-image.png">
+<meta property="og:url" content="https://flooriq.co.uk">
+<meta property="og:site_name" content="FloorIQ">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FloorIQ — Brand Training, Reimagined">
+<meta name="twitter:description" content="Turn your brand standards manual into AI-powered training scenarios. Deployed to your team in 24 hours.">
+<meta name="twitter:image" content="https://flooriq.co.uk/og-image.png">
+
+<!-- General Meta -->
+<meta name="description" content="FloorIQ turns your brand standards document into interactive, AI-scored training scenarios — deployed to your team in under 24 hours. Built for premium retail brands.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:     #0D0D0F;
+    --paper:   #F5F2EC;
+    --cream:   #EDE8DE;
+    --gold:    #C8972B;
+    --gold-lt: #E8C060;
+    --mid:     #6B6660;
+    --rule:    rgba(200,151,43,0.25);
+    --white:   #FFFFFF;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999; opacity: 0.35;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 24px 60px;
+    border-bottom: 1px solid rgba(200,151,43,0.15);
+    background: rgba(13,13,15,0.85);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    letter-spacing: 0.04em;
+    color: var(--paper);
+  }
+  .logo span { color: var(--gold); }
+
+  .nav-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+    border: 1px solid var(--gold);
+    padding: 6px 14px;
+    border-radius: 2px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 60px 80px;
+    gap: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    right: -200px; top: 50%;
+    transform: translateY(-50%);
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(200,151,43,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-kicker {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-kicker::before {
+    content: '';
+    display: block;
+    width: 32px; height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 700;
+    line-height: 1.08;
+    color: var(--paper);
+    margin-bottom: 32px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #A09890;
+    max-width: 480px;
+    margin-bottom: 48px;
+  }
+
+  /* ── WAITLIST FORM ── */
+  .waitlist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 440px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .waitlist-form input, .waitlist-form select {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(200,151,43,0.2);
+    color: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 14px 18px;
+    border-radius: 3px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    width: 100%;
+  }
+  .waitlist-form input::placeholder { color: #6B6660; }
+  .waitlist-form input:focus {
+    border-color: var(--gold);
+    background: rgba(200,151,43,0.05);
+  }
+  .waitlist-form select { color: #6B6660; }
+  .waitlist-form select option { background: #1a1a1e; color: var(--paper); }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    text-transform: uppercase;
+  }
+  .btn-primary:hover {
+    background: var(--gold-lt);
+    transform: translateY(-1px);
+  }
+
+  .form-note {
+    font-size: 12px;
+    color: #5a5450;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── HERO RIGHT — STAT CARD ── */
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.4s forwards;
+  }
+
+  .stat-card {
+    border: 1px solid rgba(200,151,43,0.15);
+    padding: 28px 32px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.025);
+    backdrop-filter: blur(4px);
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-card::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--gold);
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: #7a7470;
+    line-height: 1.5;
+    max-width: 260px;
+  }
+
+  .quote-card {
+    border: 1px solid rgba(200,151,43,0.1);
+    padding: 28px 32px;
+    border-radius: 4px;
+    background: rgba(200,151,43,0.04);
+  }
+
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--paper);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .quote-attr {
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION SHARED ── */
+  section {
+    padding: 100px 60px;
+    position: relative;
+  }
+
+  .section-rule {
+    width: 100%;
+    height: 1px;
+    background: var(--rule);
+    margin-bottom: 80px;
+  }
+
+  .section-kicker {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 3.5vw, 48px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--paper);
+    margin-bottom: 20px;
+  }
+
+  .section-title em { font-style: italic; color: var(--gold); }
+
+  .section-body {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #9a9490;
+    max-width: 600px;
+  }
+
+  /* ── PROBLEM SECTION ── */
+  .problem-section {
+    background: rgba(255,255,255,0.015);
+    border-top: 1px solid rgba(200,151,43,0.1);
+    border-bottom: 1px solid rgba(200,151,43,0.1);
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-top: 60px;
+  }
+
+  .problem-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .problem-item {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(200,151,43,0.1);
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 20px;
+    align-items: start;
+    opacity: 0;
+    animation: fadeUp 0.6s forwards;
+  }
+  .problem-item:nth-child(1) { animation-delay: 0.1s; }
+  .problem-item:nth-child(2) { animation-delay: 0.2s; }
+  .problem-item:nth-child(3) { animation-delay: 0.3s; }
+  .problem-item:nth-child(4) { animation-delay: 0.4s; }
+
+  .problem-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    padding-top: 3px;
+  }
+
+  .problem-text { font-size: 15px; line-height: 1.65; color: #9a9490; }
+  .problem-text strong { color: var(--paper); font-weight: 500; }
+
+  .manual-visual {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(200,151,43,0.12);
+    border-radius: 4px;
+    padding: 32px;
+    position: relative;
+  }
+
+  .manual-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .manual-pages {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .page-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    color: #5a5450;
+    transition: background 0.2s;
+  }
+
+  .page-row.read {
+    background: rgba(200,151,43,0.08);
+    color: var(--gold);
+  }
+
+  .page-row.unread { color: #3a3430; }
+
+  .page-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .page-row.read .page-dot { background: var(--gold); }
+  .page-row.unread .page-dot { background: #2a2420; }
+
+  .manual-verdict {
+    margin-top: 20px;
+    padding: 16px;
+    background: rgba(200,0,0,0.06);
+    border: 1px solid rgba(200,0,0,0.15);
+    border-radius: 3px;
+    font-size: 12px;
+    color: #c06060;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how-section { background: var(--ink); }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+    border: 1px solid rgba(200,151,43,0.12);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .step {
+    padding: 40px 36px;
+    background: rgba(255,255,255,0.02);
+    border-right: 1px solid rgba(200,151,43,0.1);
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .step:last-child { border-right: none; }
+  .step:hover { background: rgba(200,151,43,0.05); }
+
+  .step-n {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: rgba(200,151,43,0.15);
+    line-height: 1;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+  }
+  .step:hover .step-n { color: rgba(200,151,43,0.35); }
+
+  .step-title {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--paper);
+    margin-bottom: 12px;
+  }
+
+  .step-body { font-size: 14px; line-height: 1.7; color: #7a7470; }
+
+  .step-tag {
+    display: inline-block;
+    margin-top: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    border: 1px solid rgba(200,151,43,0.3);
+    padding: 4px 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ── FOR WHO ── */
+  .forwho-section {
+    background: rgba(255,255,255,0.015);
+    border-top: 1px solid rgba(200,151,43,0.1);
+    border-bottom: 1px solid rgba(200,151,43,0.1);
+  }
+
+  .sectors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 60px;
+  }
+
+  .sector-card {
+    padding: 28px 24px;
+    border: 1px solid rgba(200,151,43,0.12);
+    border-radius: 3px;
+    background: rgba(255,255,255,0.02);
+    transition: border-color 0.3s, background 0.3s, transform 0.2s;
+    cursor: default;
+  }
+  .sector-card:hover {
+    border-color: rgba(200,151,43,0.4);
+    background: rgba(200,151,43,0.04);
+    transform: translateY(-3px);
+  }
+
+  .sector-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .sector-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--paper);
+    margin-bottom: 8px;
+  }
+
+  .sector-desc { font-size: 13px; color: #6a6460; line-height: 1.5; }
+
+  /* ── FOUNDER ── */
+  .founder-section { background: var(--ink); }
+
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .founder-portrait {
+    aspect-ratio: 3/4;
+    background: rgba(200,151,43,0.08);
+    border: 1px solid rgba(200,151,43,0.2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .founder-portrait::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(200,151,43,0.06) 0%, transparent 60%);
+  }
+
+  .portrait-initials {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: rgba(200,151,43,0.3);
+    z-index: 1;
+  }
+
+  .founder-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--paper);
+    margin-bottom: 6px;
+  }
+
+  .founder-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .founder-bio {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #9a9490;
+    margin-bottom: 32px;
+  }
+
+  .founder-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .founder-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    border: 1px solid rgba(200,151,43,0.25);
+    padding: 6px 12px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ── WAITLIST CTA ── */
+  .cta-section {
+    background: rgba(200,151,43,0.05);
+    border-top: 1px solid rgba(200,151,43,0.2);
+    border-bottom: 1px solid rgba(200,151,43,0.2);
+    text-align: center;
+  }
+
+  .cta-section .section-title { text-align: center; margin: 0 auto 16px; }
+  .cta-section .section-body { text-align: center; margin: 0 auto 48px; }
+
+  .cta-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .cta-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .cta-form input {
+    background: rgba(13,13,15,0.6);
+    border: 1px solid rgba(200,151,43,0.2);
+    color: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 16px 20px;
+    border-radius: 3px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.2s;
+  }
+  .cta-form input::placeholder { color: #5a5450; }
+  .cta-form input:focus { border-color: var(--gold); }
+
+  .success-msg {
+    display: none;
+    text-align: center;
+    padding: 24px;
+    background: rgba(200,151,43,0.08);
+    border: 1px solid rgba(200,151,43,0.25);
+    border-radius: 4px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .success-msg .success-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .success-msg p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .success-msg small { font-size: 13px; color: #7a7470; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 48px 60px;
+    border-top: 1px solid rgba(200,151,43,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--paper);
+  }
+  .footer-logo span { color: var(--gold); }
+
+  .footer-links {
+    display: flex;
+    gap: 28px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: #5a5450;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: #3a3430;
+    text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-left {
+    opacity: 0;
+    animation: fadeUp 0.9s 0.1s forwards;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 20px 24px; }
+    .hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
+    .hero-right { display: none; }
+    section { padding: 70px 24px; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .step { border-right: none; border-bottom: 1px solid rgba(200,151,43,0.1); }
+    .sectors-grid { grid-template-columns: 1fr 1fr; }
+    .founder-grid { grid-template-columns: 1fr; }
+    .founder-portrait { max-height: 240px; }
+    footer { flex-direction: column; gap: 24px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Floor<span>IQ</span></div>
+  <div class="nav-tag">Private Beta — Apply for Access</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-kicker">AI-Powered Brand Training</div>
+    <h1>Your brand manual<br>is <em>60 pages.</em><br>Your staff read one.</h1>
+    <p class="hero-sub">
+      FloorIQ turns your existing brand standards document into interactive, AI-scored training scenarios — deployed to your team in under 24 hours. No content authoring. No LMS consultants. No waiting.
+    </p>
+
+    <form class="waitlist-form" onsubmit="handleSubmit(event, 'hero-success')">
+      <div class="form-row">
+        <input type="text" placeholder="First name" required>
+        <input type="text" placeholder="Brand / Company" required>
+      </div>
+      <input type="email" placeholder="Work email address" required>
+      <select>
+        <option value="" disabled selected>Team size</option>
+        <option>1–10 staff</option>
+        <option>11–30 staff</option>
+        <option>31–100 staff</option>
+        <option>100+ staff</option>
+      </select>
+      <button type="submit" class="btn-primary">Request Early Access →</button>
+      <p class="form-note">No credit card. No commitment. We'll be in touch within 48 hours.</p>
+    </form>
+    <div class="success-msg" id="hero-success">
+      <span class="success-icon">✦</span>
+      <p>You're on the list.</p>
+      <small>We'll reach out within 48 hours with your early access details.</small>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stat-card">
+      <div class="stat-number">35–50%</div>
+      <div class="stat-label">Annual staff turnover in premium retail. Every leaver takes your brand standards with them.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">4hrs</div>
+      <div class="stat-label">Average weekly time a store manager spends on informal coaching and re-training. FloorIQ gives that back.</div>
+    </div>
+    <div class="quote-card">
+      <div class="quote-text">"We hand them the manual on day one. By day three, they've forgotten where they put it."</div>
+      <div class="quote-attr">— Store Manager, London Premium Retail</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem-section">
+  <div class="section-rule"></div>
+  <div class="section-kicker">The Problem</div>
+  <h2 class="section-title">Brand training is broken.<br><em>Everywhere.</em></h2>
+  <p class="section-body">Premium retail brands invest everything in their customer experience. Then they hand new staff a PDF and hope for the best.</p>
+
+  <div class="problem-grid">
+    <div class="problem-items">
+      <div class="problem-item">
+        <div class="problem-num">01</div>
+        <div class="problem-text"><strong>Brand standards live in documents no one reads.</strong> A beautifully crafted 60-page manual is not a training programme. It is a filing cabinet.</div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-num">02</div>
+        <div class="problem-text"><strong>Generic LMS platforms cost a fortune and serve no one.</strong> Axonify, WorkRamp, Cornerstone — built for tech companies and enterprise HR. Minimum £25,000/year. Not built for your boutique, your concession, your flagship café.</div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-num">03</div>
+        <div class="problem-text"><strong>Managers become full-time trainers.</strong> With 35–50% annual turnover, store managers spend 4+ hours a week on coaching that should be handled by a system.</div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-num">04</div>
+        <div class="problem-text"><strong>No one knows if training actually worked.</strong> There is no score. No benchmark. No way to know if your new recruit can actually represent your brand before they're standing in front of a customer.</div>
+      </div>
+    </div>
+
+    <div class="manual-visual reveal">
+      <div class="manual-title">Brand Standards Manual — Read Status</div>
+      <div class="manual-pages">
+        <div class="page-row read"><div class="page-dot"></div> Page 01–02 · Welcome & Brand Mission</div>
+        <div class="page-row read"><div class="page-dot"></div> Page 03–04 · Company History</div>
+        <div class="page-row unread"><div class="page-dot"></div> Page 05–12 · Customer Greeting Protocol</div>
+        <div class="page-row unread"><div class="page-dot"></div> Page 13–20 · Product Knowledge Standards</div>
+        <div class="page-row unread"><div class="page-dot"></div> Page 21–28 · Gifting & Upsell Procedure</div>
+        <div class="page-row unread"><div class="page-dot"></div> Page 29–36 · Complaint Resolution</div>
+        <div class="page-row unread"><div class="page-dot"></div> Page 37–44 · Beverage Service Standards</div>
+        <div class="page-row unread"><div class="page-dot"></div> Page 45–52 · Visual Merchandising</div>
+        <div class="page-row unread"><div class="page-dot"></div> Page 53–60 · Brand Voice & Communication</div>
+      </div>
+      <div class="manual-verdict">⚠ Staff read avg. 2 of 60 pages. Brand alignment: unknown.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="section-rule"></div>
+  <div class="section-kicker">How FloorIQ Works</div>
+  <h2 class="section-title">From brand manual<br>to <em>trained team</em> in 24 hours.</h2>
+
+  <div class="steps-grid reveal">
+    <div class="step">
+      <div class="step-n">01</div>
+      <div class="step-title">Upload your brand document</div>
+      <div class="step-body">PDF, Word, or text. Your existing brand standards manual, service guide, or product handbook. No reformatting required.</div>
+      <span class="step-tag">2 minutes</span>
+    </div>
+    <div class="step">
+      <div class="step-n">02</div>
+      <div class="step-title">AI generates training scenarios</div>
+      <div class="step-body">FloorIQ's engine reads your document and produces 20–50 interactive, brand-specific customer interaction scenarios. Reviewed and approved by you before going live.</div>
+      <span class="step-tag">Automatic</span>
+    </div>
+    <div class="step">
+      <div class="step-n">03</div>
+      <div class="step-title">Staff train. You see the scores.</div>
+      <div class="step-body">Staff complete scenarios on any device in under 5 minutes. AI scores responses against your brand standards. You get a real-time performance dashboard — per staff member, per topic.</div>
+      <span class="step-tag">Live dashboard</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHO -->
+<section class="forwho-section">
+  <div class="section-rule"></div>
+  <div class="section-kicker">Built For</div>
+  <h2 class="section-title">Premium brands who care<br>about <em>every interaction.</em></h2>
+  <p class="section-body">FloorIQ is purpose-built for brands where the customer experience is the product. Not for supermarkets. Not for call centres.</p>
+
+  <div class="sectors-grid reveal">
+    <div class="sector-card">
+      <span class="sector-icon">🍫</span>
+      <div class="sector-name">Luxury Confectionery</div>
+      <div class="sector-desc">Flagship chocolatiers, premium gifting brands, artisan confectionery boutiques</div>
+    </div>
+    <div class="sector-card">
+      <span class="sector-icon">☕</span>
+      <div class="sector-name">Premium Beverage</div>
+      <div class="sector-desc">Speciality coffee, fine tea, artisan beverage bars and café concessions</div>
+    </div>
+    <div class="sector-card">
+      <span class="sector-icon">💍</span>
+      <div class="sector-name">Jewellery & Accessories</div>
+      <div class="sector-desc">Independent jewellers, luxury accessories boutiques, department store concessions</div>
+    </div>
+    <div class="sector-card">
+      <span class="sector-icon">🌸</span>
+      <div class="sector-name">Cosmetics & Fragrance</div>
+      <div class="sector-desc">Premium beauty brands, niche fragrance houses, luxury skincare retail</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder-section">
+  <div class="section-rule"></div>
+  <div class="section-kicker">The Founder</div>
+  <h2 class="section-title">Built by someone<br>who <em>lived the problem.</em></h2>
+
+  <div class="founder-grid reveal">
+    <div class="founder-portrait">
+      <div class="portrait-initials">IB</div>
+    </div>
+    <div>
+      <div class="founder-name">Islam Boulahdjel</div>
+      <div class="founder-role">Founder — FloorIQ · London, UK</div>
+      <p class="founder-bio">
+        Islam spent years on the floor of London's most prestigious luxury retail flagships — including Lindt & Sprüngli's Piccadilly flagship, where he trained and managed teams of 28–40 staff and drove over £2M in sales in his first two months. He knows exactly what it costs when brand training fails — and exactly what it looks like when it works.
+      </p>
+      <p class="founder-bio">
+        FloorIQ was built to replace the manual, ad-hoc training process Islam lived every week — turning a brand's own documents into a measurable, scalable training system for the first time.
+      </p>
+      <div class="founder-tags">
+        <span class="founder-tag">Lindt & Sprüngli</span>
+        <span class="founder-tag">Luxury Retail</span>
+        <span class="founder-tag">Team Leadership 40+</span>
+        <span class="founder-tag">MSc Int'l Business</span>
+        <span class="founder-tag">London</span>
+        <span class="founder-tag">EN · FR · AR</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-rule"></div>
+  <div class="section-kicker">Join the Waitlist</div>
+  <h2 class="section-title" style="max-width:600px; margin: 0 auto 16px;">
+    Be first to transform<br>how your brand <em>trains.</em>
+  </h2>
+  <p class="section-body" style="margin: 0 auto 48px;">
+    FloorIQ is currently in private beta with a small group of London premium retail brands. Apply now to secure early access at our founding-member rate.
+  </p>
+
+  <form class="cta-form" onsubmit="handleSubmit(event, 'cta-success')">
+    <div class="cta-form-row">
+      <input type="text" placeholder="Your name" required>
+      <input type="text" placeholder="Brand name" required>
+    </div>
+    <div class="cta-form-row">
+      <input type="email" placeholder="Work email" required>
+      <input type="tel" placeholder="Phone (optional)">
+    </div>
+    <input type="text" placeholder="Your role (e.g. Store Manager, Brand Director)" style="width:100%">
+    <button type="submit" class="btn-primary" style="width:100%; padding: 18px;">
+      Apply for Early Access →
+    </button>
+    <p class="form-note" style="color: #5a5450;">
+      We review applications personally. Founding member pricing available to first 10 brands.
+    </p>
+  </form>
+
+  <div class="success-msg" id="cta-success">
+    <span class="success-icon">✦</span>
+    <p>Application received.</p>
+    <small>Islam will personally review your application and be in touch within 48 hours.<br>
+    In the meantime: <a href="mailto:lamine.boulahdjel@gmail.com" style="color:var(--gold)">lamine.boulahdjel@gmail.com</a></small>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Floor<span>IQ</span></div>
+  <div class="footer-links">
+    <a href="mailto:lamine.boulahdjel@gmail.com">Contact</a>
+    <a href="https://linkedin.com/in/islam-mohamed-el-amine-boulahdjel" target="_blank">LinkedIn</a>
+    <a href="#">Privacy</a>
+  </div>
+  <div class="footer-copy">© 2026 FloorIQ · London, UK</div>
+</footer>
+
+<script>
+  // ── FORM SUBMIT HANDLER ──
+  function handleSubmit(e, successId) {
+    e.preventDefault();
+    const form = e.target;
+    const success = document.getElementById(successId);
+    form.style.display = 'none';
+    success.style.display = 'block';
+
+    // In production: replace with fetch() to your form backend (Netlify, Formspree, etc.)
+    // fetch('/api/waitlist', { method: 'POST', body: new FormData(form) })
+  }
+
+  // ── SCROLL REVEAL ──
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ── MANUAL PAGE ANIMATION ──
+  // Simulate "reading" animation on the manual visual
+  const unreadRows = document.querySelectorAll('.page-row.unread');
+  let idx = 0;
+  function animateManual() {
+    if (idx < unreadRows.length) {
+      // subtle pulse on scroll into view — handled by CSS
+    }
+  }
+</script>
+
+</body>
+</html>
