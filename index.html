@@ -46,7 +46,7 @@ body::before{
 nav{
   position:fixed;top:0;left:0;right:0;z-index:900;
   padding:0 48px;
-  height:72px;
+  height:80px;
   display:flex;align-items:center;justify-content:space-between;
   background:rgba(248,244,238,0.92);
   backdrop-filter:blur(20px);
@@ -55,14 +55,16 @@ nav{
 }
 
 .nav-logo{
-  font-family:'Cormorant Garamond',serif;
-  font-size:26px;font-weight:700;
-  color:var(--gold);
-  letter-spacing:0.05em;
+  display:flex;align-items:center;
   cursor:pointer;
   text-decoration:none;
+  height:60px;
 }
-.nav-logo span{color:var(--text);font-weight:300}
+.nav-logo img{
+  height:60px;
+  width:auto;
+  display:block;
+}
 
 .nav-links{display:flex;align-items:center;gap:36px}
 .nav-links a{
@@ -82,14 +84,14 @@ nav{
 .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
 
 /* ── PAGES ── */
-.page{display:none;min-height:100vh;padding-top:72px}
+.page{display:none;min-height:100vh;padding-top:80px}
 .page.active{display:block}
 
 /* ── HERO ── */
 #home{
   display:none;
   min-height:100vh;
-  padding-top:72px;
+  padding-top:80px;
   position:relative;
   overflow:hidden;
 }
@@ -671,7 +673,7 @@ footer{
 
 <!-- NAV -->
 <nav id="main-nav">
-  <a class="nav-logo" onclick="showPage('home')">Floor<span>IQ</span></a>
+  <a class="nav-logo" onclick="showPage('home')"><img src="flooriq-logo.svg" alt="FloorIQ"></a>
   <div class="nav-links">
     <a onclick="showPage('home')" class="active" id="nav-home">Home</a>
     <a onclick="showPage('services')" id="nav-services">Services</a>
@@ -1202,7 +1204,7 @@ footer{
             <div class="contact-icon">✉️</div>
             <div>
               <div class="contact-label">Email</div>
-              <div class="contact-value"><a href="mailto:hello@flooriq.app" style="color:var(--gold)">hello@flooriq.app</a></div>
+              <div class="contact-value"><a href="/cdn-cgi/l/email-protection#0169646d6d6e41676d6e6e7368702f607171" style="color:var(--gold)"><span class="__cf_email__" data-cfemail="b9d1dcd5d5d6f9dfd5d6d6cbd0c897d8c9c9">[email&#160;protected]</span></a></div>
             </div>
           </div>
 
@@ -1306,11 +1308,11 @@ footer{
   </div>
   <div class="footer-bottom">
     <span>© 2025 FloorIQ Ltd. All rights reserved.</span>
-    <span>London, United Kingdom · <a href="mailto:hello@flooriq.app" style="color:var(--muted)">hello@flooriq.app</a></span>
+    <span>London, United Kingdom · <a href="/cdn-cgi/l/email-protection#167e737a7a7956707a7979647f6738776666" style="color:var(--muted)"><span class="__cf_email__" data-cfemail="543c3138383b1432383b3b263d257a352424">[email&#160;protected]</span></a></span>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
@@ -1347,12 +1349,3 @@ function toggleMobile() {
   if(links.style.display === 'flex') {
     links.style.display = 'none';
   } else {
-        links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:rgba(248,244,238,0.98);padding:24px;gap:16px;border-bottom:1px solid rgba(139,105,20,0.12);z-index:899;backdrop-filter:blur(20px)';
-  }
-}
-
-// Open first FAQ by default
-document.querySelector('.faq-item').classList.add('open');
-</script>
-</body>
-</html>
