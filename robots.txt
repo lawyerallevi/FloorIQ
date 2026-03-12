@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://flooriq.app/sitemap.xml
