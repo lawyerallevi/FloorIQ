@@ -1,0 +1,6 @@
+# Internal docs — never ship to the public site
+CLAUDE.md
+index_old.html
+*.docx
+.claude
+.shrek
